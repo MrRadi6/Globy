@@ -10,5 +10,8 @@ target 'SoleekLabTask' do
    pod 'Firebase/Analytics'
    pod 'Firebase/Auth'
    pod 'GoogleSignIn'
+   pod 'FBSDKCoreKit'
+   pod 'FBSDKLoginKit'
+   pod 'FBSDKShareKit'
 
 end

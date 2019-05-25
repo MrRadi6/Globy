@@ -181,7 +181,7 @@
         <!--Register View Controller-->
         <scene sceneID="4Qu-le-mz7">
             <objects>
-                <viewController id="KY5-LZ-Kwe" customClass="RegisterViewController" customModule="SoleekLabTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerStoryBoard" id="KY5-LZ-Kwe" customClass="RegisterViewController" customModule="SoleekLabTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zqG-Sh-KVM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
