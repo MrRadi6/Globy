@@ -1,0 +1,6 @@
+framework module Pods_SoleekLabTask {
+  umbrella header "Pods-SoleekLabTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

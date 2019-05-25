@@ -18,21 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud-2725520_1920" translatesAutoresizingMaskIntoConstraints="NO" id="om0-3T-hIx" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wing-238469_1280" translatesAutoresizingMaskIntoConstraints="NO" id="om0-3T-hIx" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fq-a6-VRI" userLabel="logoContainer">
-                                <rect key="frame" x="0.0" y="127" width="414" height="282"/>
+                                <rect key="frame" x="0.0" y="127" width="414" height="585"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-9P-PB9" userLabel="logo">
-                                        <rect key="frame" x="107" y="12" width="200" height="128"/>
+                                        <rect key="frame" x="107" y="163.5" width="200" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="Lsv-VD-H22"/>
                                             <constraint firstAttribute="width" constant="200" id="qeL-ai-EpF"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Globy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdE-JF-Ll5">
-                                        <rect key="frame" x="111.5" y="147" width="191.5" height="108"/>
+                                        <rect key="frame" x="111.5" y="298.5" width="191.5" height="108"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="108" id="kHe-lp-ju2"/>
                                         </constraints>
@@ -50,13 +50,17 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fq-a6-VRI" secondAttribute="bottom" constant="453" id="2Ga-Yg-cxq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fq-a6-VRI" secondAttribute="bottom" constant="150" id="2Ga-Yg-cxq"/>
                             <constraint firstItem="0fq-a6-VRI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3WZ-9j-1HF"/>
                             <constraint firstItem="om0-3T-hIx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="49f-6B-VTM"/>
+                            <constraint firstItem="om0-3T-hIx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="INg-7J-LY4"/>
                             <constraint firstItem="om0-3T-hIx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PYl-qc-w0k"/>
                             <constraint firstAttribute="bottom" secondItem="om0-3T-hIx" secondAttribute="bottom" id="QUG-8W-Xxs"/>
+                            <constraint firstItem="om0-3T-hIx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UBG-C5-n4v"/>
                             <constraint firstItem="0fq-a6-VRI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="cPS-1W-GsN"/>
                             <constraint firstItem="0fq-a6-VRI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dTU-Wc-xgm"/>
+                            <constraint firstItem="om0-3T-hIx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fnA-y5-WzV"/>
+                            <constraint firstAttribute="bottom" secondItem="om0-3T-hIx" secondAttribute="bottom" id="hYh-IU-swU"/>
                             <constraint firstItem="om0-3T-hIx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="sv7-BX-OQc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -68,7 +72,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cloud-2725520_1920" width="1920" height="1280"/>
+        <image name="wing-238469_1280" width="1280" height="960"/>
         <image name="world" width="512" height="512"/>
     </resources>
 </document>

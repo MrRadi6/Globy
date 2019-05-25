@@ -20,6 +20,12 @@ class DesignableTextField: UITextField {
         }
     }
     
+    @IBInspectable var placeholderPosition: CGFloat = 0{
+        didSet{
+
+        }
+    }
+    
     @IBInspectable var placeholderColor: UIColor?{
         didSet{
             if let color = placeholderColor{
@@ -39,7 +45,6 @@ class DesignableTextField: UITextField {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,7 +58,7 @@ class DesignableTextField: UITextField {
         leftViewMode = .always
         let view = UIView()
         if let image = leftImage{
-            let imageView = UIImageView(frame: CGRect(x: frame.size.height, y: frame.size.height * (-0.5), width: 25, height: 25))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: frame.size.height * (-0.5), width: 25, height: 25))
             imageView.image = image
             view.addSubview(imageView)
         }
@@ -66,8 +71,8 @@ class DesignableTextField: UITextField {
         addSubview(lineView)
         lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10).isActive = true
-        lineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: frame.size.height).isActive = true
-        lineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: frame.size.height * -1).isActive = true
+        lineView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        lineView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 
