@@ -26,8 +26,6 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         emailTextField.delegate = self
         confirmPasswordTextField.delegate = self
         passwordTextField.delegate = self
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func registerButtonPressed(_ sender: DesignableButton) {
@@ -36,11 +34,11 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         guard let password = passwordTextField.text else { return }
         guard let confirmPassword = confirmPasswordTextField.text else { return }
         
-        if email.contains("@") == false && email.contains("."){
+        if validateEmail(candidate: email) == false {
             makeAlert(title: "invalid Email", message: "please enter a valid email Address")
         }
-        else if password.count < 8 {
-            makeAlert(title: "Invalid Password", message: "please enter a valid password it should has at least 8 characters")
+        else if validatePassword(candidate: password) == false {
+            makeAlert(title: "Invalid Password", message: "Please enter Minimum eight characters, at least one uppercase letter, one lowercase letter , one number and one specail character #?!@$%^&*-")
         }
         else if password != confirmPassword {
             makeAlert(title: "Invalid Password", message: "your password does not match")
@@ -124,6 +122,16 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         let acttion = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(acttion)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func validateEmail(candidate: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: candidate)
+    }
+    
+    private func validatePassword(candidate: String) -> Bool {
+        let passwordRegex = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: candidate)
     }
     
 }

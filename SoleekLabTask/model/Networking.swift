@@ -46,12 +46,9 @@ class Networking {
                 let timezone = jsonArray[i]["timezones"].arrayValue[0].stringValue
                 let capital = jsonArray[i]["capital"].stringValue
                 countries.append(Country(name: name, capital: capital, timezone: timezone, nativeName: nativeName))
-                print(name)
-                print(getNumberOfCountries())
             }
             
         }
-        print(getNumberOfCountries())
         // nodify the Controller that model finished downloading the data
         collectionView.reloadData()
     }
