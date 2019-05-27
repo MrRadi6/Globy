@@ -15,5 +15,7 @@ target 'SoleekLabTask' do
    pod 'FBSDKShareKit'
    pod 'Alamofire'
    pod 'SwiftyJSON', '~> 4.0'
+   pod 'SVProgressHUD'
+
 
 end

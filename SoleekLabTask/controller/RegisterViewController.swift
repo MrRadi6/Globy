@@ -11,6 +11,7 @@ import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
+import SVProgressHUD
 
 class RegisterViewController: UIViewController,GIDSignInUIDelegate {
    
@@ -34,6 +35,7 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         guard let password = passwordTextField.text else { return }
         guard let confirmPassword = confirmPasswordTextField.text else { return }
         
+        
         if validateEmail(candidate: email) == false {
             makeAlert(title: "invalid Email", message: "please enter a valid email Address")
         }
@@ -44,11 +46,15 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
             makeAlert(title: "Invalid Password", message: "your password does not match")
         }
         else{
+            
+            SVProgressHUD.show()
             Auth.auth().createUser(withEmail: email, password: password) { (results, error) in
                 if error != nil{
+                    SVProgressHUD.dismiss()
                     self.makeAlert(title: "Registration Failed", message: "Email already in use try another one")
                 }
                 else {
+                    SVProgressHUD.dismiss()
                     self.performSegue(withIdentifier: "registerToHome", sender: self)
                 }
             }
@@ -57,15 +63,18 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
     }
     
     @IBAction func registerWithGmail(_ sender: UIButton) {
+        SVProgressHUD.show()
         GIDSignIn.sharedInstance()?.signIn()
     }
     
     // MARK: - Facebook login methods
     @IBAction func registerWithFacebook(_ sender: UIButton) {
         let fbLoginManager = LoginManager()
+        
         fbLoginManager.logIn(permissions: ["email","public_profile"], from: self) { (results, error) in
             if error != nil {
-                print("facebook login failed")
+                SVProgressHUD.dismiss()
+                self.makeAlert(title: "Facebook", message: "error login with facebook")
                 return
             }
             self.loginTofirebaseWithFB()
@@ -75,14 +84,17 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
     func loginTofirebaseWithFB(){
         guard let token = AccessToken.current else { return }
         let credentials = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+        SVProgressHUD.show()
         Auth.auth().signIn(with: credentials) { (results, error) in
             if let error = error {
+                SVProgressHUD.dismiss()
                 self.makeAlert(title: "Facebook", message: "failed to register with facebook \(error.localizedDescription)")
                 print(error)
                 return
             }
             
             // User is signed in
+            SVProgressHUD.dismiss()
             self.performSegue(withIdentifier: "registerToHome", sender: self)
         }
         
@@ -93,25 +105,29 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
 
         if let error = error {
+            SVProgressHUD.dismiss()
             makeAlert(title: "Google", message: "Failed to signin with your gmail account \(error.localizedDescription)")
             print(error)
             return
         }
-        else {
-            print("login success")
+        
+        guard let authentication = user.authentication else {
+            SVProgressHUD.dismiss()
+            return
         }
         
-        guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         
         Auth.auth().signIn(with: credential) { (results, error) in
             if let error = error {
+                SVProgressHUD.dismiss()
                 self.makeAlert(title: "Google", message: "failed to register with gmail \(error.localizedDescription)")
                 print(error)
                 return
             }
             
             // User is signed in
+            SVProgressHUD.dismiss()
             self.performSegue(withIdentifier: "registerToHome", sender: self)
         }
         
@@ -159,6 +175,7 @@ extension RegisterViewController: homeDelegate{
             makeAlert(title: "Gmail", message: "Failed to login with gmail")
         }
         else if state == .Success {
+            SVProgressHUD.dismiss()
             performSegue(withIdentifier: "registerToHome", sender: self)
         }
     }

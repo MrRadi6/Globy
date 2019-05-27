@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController,UITextFieldDelegate{
     
@@ -36,22 +37,27 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
     @IBAction func loginButtonPressed(_ sender: DesignableButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        
         let alert = UIAlertController(title: "Sign-in Failed", message: "Wrong email or password", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         
+        SVProgressHUD.show()
         if email != "" && password != ""{
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 if error != nil {
                     // pop up error alert to user
+                    SVProgressHUD.dismiss()
                     self.present(alert, animated: true, completion: nil)
                 }
                 else {
+                    SVProgressHUD.dismiss()
                     self.performSegue(withIdentifier: "loginToHome", sender: self)
                 }
             }
         }
         else {
+            SVProgressHUD.dismiss()
             present(alert, animated: true, completion: nil)
         }
     }
