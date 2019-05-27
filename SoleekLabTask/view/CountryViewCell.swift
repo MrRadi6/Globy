@@ -14,6 +14,9 @@ class CountryViewCell: UICollectionViewCell {
     var country :Country? {
         didSet{
             guard let newCountry = country else {return}
+            countryLabel.text = newCountry.getName()
+            details.text = newCountry.getDetails()
+            timeZone.text = newCountry.getTimezone()
             
         }
     }
@@ -36,7 +39,7 @@ class CountryViewCell: UICollectionViewCell {
     private let countryLabel: UILabel = {
         let label = UILabel()
         label.text = "Country Name"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 24)
         return label
     }()
     
@@ -44,16 +47,16 @@ class CountryViewCell: UICollectionViewCell {
     private let details: UILabel = {
         let label = UILabel()
         label.text = "Welcome to our Country hope you a nice vacation ......"
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textColor = UIColor.darkGray
         return label
     }()
     
     //MARK: - Time label
-    private let language: UILabel = {
+    private let timeZone: UILabel = {
         let label = UILabel()
-        label.text = "English"
+        label.text = "UTC-0"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .right
         return label
@@ -95,11 +98,11 @@ class CountryViewCell: UICollectionViewCell {
     private func textSetup(){
         textContainerView.addSubview(countryLabel)
         textContainerView.addSubview(details)
-        textContainerView.addSubview(language)
+        textContainerView.addSubview(timeZone)
         
-        LabelSetup(view: countryLabel, top: textContainerView.topAnchor, bottom: details.topAnchor, leading: textContainerView.leadingAnchor, trailing: language.leadingAnchor)
+        LabelSetup(view: countryLabel, top: textContainerView.topAnchor, bottom: details.topAnchor, leading: textContainerView.leadingAnchor, trailing: timeZone.leadingAnchor)
         LabelSetup(view: details, top: countryLabel.bottomAnchor, bottom: textContainerView.bottomAnchor, leading: textContainerView.leadingAnchor, trailing: textContainerView.trailingAnchor)
-        LabelSetup(view: language, top: textContainerView.topAnchor, bottom: details.topAnchor, leading: countryLabel.trailingAnchor, trailing: textContainerView.trailingAnchor)
+        LabelSetup(view: timeZone, top: textContainerView.topAnchor, bottom: details.topAnchor, leading: countryLabel.trailingAnchor, trailing: textContainerView.trailingAnchor)
     }
     
     private func LabelSetup(view: UIView,top: NSLayoutYAxisAnchor,bottom:NSLayoutYAxisAnchor,leading: NSLayoutXAxisAnchor,trailing:NSLayoutXAxisAnchor){

@@ -20,6 +20,7 @@
 		8FC9234A2298E0E00028E1AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FC923492298E0E00028E1AA /* GoogleService-Info.plist */; };
 		8FFFE412229BF3050052CC42 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFE411229BF3050052CC42 /* CountryViewCell.swift */; };
 		8FFFE414229BF3A30052CC42 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFE413229BF3A30052CC42 /* Country.swift */; };
+		8FFFE416229C08540052CC42 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFE415229C08540052CC42 /* Networking.swift */; };
 		F47B3AFD73A51DA9BDED41B2 /* Pods_SoleekLabTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFF1733F1EF06F03C808486 /* Pods_SoleekLabTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		8FC923492298E0E00028E1AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FFFE411229BF3050052CC42 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
 		8FFFE413229BF3A30052CC42 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		8FFFE415229C08540052CC42 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				8FC67F0B2299D4770030AC32 /* Connection.swift */,
 				8FFFE413229BF3A30052CC42 /* Country.swift */,
+				8FFFE415229C08540052CC42 /* Networking.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F10E52022981602008EF4F5 /* LoginViewController.swift in Sources */,
+				8FFFE416229C08540052CC42 /* Networking.swift in Sources */,
 				8FFFE414229BF3A30052CC42 /* Country.swift in Sources */,
 				8F397B3D2298849E00BCE1F4 /* RegisterViewController.swift in Sources */,
 				8F10E53322984005008EF4F5 /* DesignableTextField.swift in Sources */,
