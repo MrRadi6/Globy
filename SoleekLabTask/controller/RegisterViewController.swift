@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
 
 class RegisterViewController: UIViewController,GIDSignInUIDelegate {
    
@@ -61,7 +62,7 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
     }
     
     @IBAction func registerWithFacebook(_ sender: UIButton) {
-        
+    
     }
     
     private func makeAlert(title: String,message: String){

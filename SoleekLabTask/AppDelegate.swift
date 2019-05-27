@@ -19,9 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-                FirebaseApp.configure()
+        FirebaseApp.configure()
+        
+        //Gmail Delegates
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        //Facebook delegates
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
@@ -47,19 +52,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 }
 
-//MARK: - Goggle signin Delegate Methods
+
+
 
 // implement delegate pattern to access segue on Register view controller with the results
 protocol homeDelegate: AnyObject {
     func goToHomeScreen(state: Connection)
 }
 
+//MARK: - Goggle signin Delegate Methods
 extension AppDelegate: GIDSignInDelegate {
     
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+       /* BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+            openURL:url
+            sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+            annotation:options[UIApplicationOpenURLOptionsAnnotationKey]*/
+        //let handled = ApplicationDelegate.shared.application(application, open: url, sourceApplication: <#T##String?#>, annotation: <#T##Any?#>)
+        
         return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
     }
     

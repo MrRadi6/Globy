@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UICollectionViewController {
 
@@ -17,7 +18,7 @@ class HomeViewController: UICollectionViewController {
         super.viewDidLoad()
         network = Networking(view: collectionView)
         collectionView.backgroundColor = UIColor.white
-        collectionView.alwaysBounceVertical = true
+        collectionView.alwaysBounceVertical = false
         collectionView.register(CountryViewCell.self, forCellWithReuseIdentifier: cellId)
     }
     
@@ -34,7 +35,18 @@ class HomeViewController: UICollectionViewController {
         }
         return cell
     }
-
+    
+    @IBAction func logoutPress(_ sender: UIBarButtonItem) {
+        
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
