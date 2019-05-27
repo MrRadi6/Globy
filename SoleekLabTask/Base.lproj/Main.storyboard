@@ -92,6 +92,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bcj-K3-NCC"/>
+                                    <segue destination="hli-gN-6KQ" kind="showDetail" identifier="loginToHome" id="8Xx-SH-83D"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1on-X4-MXq" userLabel="RegisterView">
@@ -156,7 +157,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="xTo-5m-6iP" id="dnR-ix-Xa9"/>
                         <outlet property="passwordTextField" destination="a4k-Cl-n7R" id="7Qk-eJ-J4i"/>
-                        <segue destination="NvR-dD-kch" kind="show" identifier="loginToHome" id="yYM-0b-Xxp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,19 +164,29 @@
             <point key="canvasLocation" x="34.782608695652179" y="18.75"/>
         </scene>
         <!--Home View Controller-->
-        <scene sceneID="bZa-62-3G9">
+        <scene sceneID="ydC-7Y-sIB">
             <objects>
-                <viewController id="NvR-dD-kch" customClass="HomeViewController" customModule="SoleekLabTask" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="91L-X5-ORx">
+                <collectionViewController id="hli-gN-6KQ" customClass="HomeViewController" customModule="SoleekLabTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sPM-Wd-Lys">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ZaY-YH-2X9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3JG-6O-ZFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aix-A6-a7z">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="hli-gN-6KQ" id="CUS-le-JGK"/>
+                            <outlet property="delegate" destination="hli-gN-6KQ" id="XtZ-Fl-LQ9"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDD-r5-X4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="408"/>
+            <point key="canvasLocation" x="1091" y="356"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="4Qu-le-mz7">
@@ -187,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mountain-climbing-768813_1280" translatesAutoresizingMaskIntoConstraints="NO" id="UNs-Ug-tj7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000023"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join Globy with your email address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1O-V6-oQR">
                                 <rect key="frame" x="30" y="100" width="354" height="80"/>
@@ -384,7 +394,7 @@
                         <outlet property="confirmPasswordTextField" destination="Yc2-Bi-URD" id="KVe-7D-vey"/>
                         <outlet property="emailTextField" destination="nOm-0D-pvF" id="SIM-8q-LrI"/>
                         <outlet property="passwordTextField" destination="3pp-hd-2sz" id="LCO-XY-UDB"/>
-                        <segue destination="NvR-dD-kch" kind="show" identifier="registerToHome" id="MWb-Nt-X3r"/>
+                        <segue destination="hli-gN-6KQ" kind="showDetail" identifier="registerToHome" id="Qbv-Qa-yha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POT-an-0WS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,6 +412,6 @@
         <image name="world" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MWb-Nt-X3r"/>
+        <segue reference="Qbv-Qa-yha"/>
     </inferredMetricsTieBreakers>
 </document>

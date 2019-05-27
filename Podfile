@@ -13,5 +13,7 @@ target 'SoleekLabTask' do
    pod 'FBSDKCoreKit'
    pod 'FBSDKLoginKit'
    pod 'FBSDKShareKit'
+   pod 'Alamofire'
+   pod 'SwiftyJSON', '~> 4.0'
 
 end

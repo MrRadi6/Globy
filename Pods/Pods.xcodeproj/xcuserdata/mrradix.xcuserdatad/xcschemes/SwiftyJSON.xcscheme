@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "587BB0D70D82446BC964D1E1D9B7E10E"
-               BuildableName = "Pods_SoleekLabTask.framework"
-               BlueprintName = "Pods-SoleekLabTask"
+               BlueprintIdentifier = "E8E2C60C1664F39F91DC5AF711B5706D"
+               BuildableName = "SwiftyJSON.framework"
+               BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "587BB0D70D82446BC964D1E1D9B7E10E"
-            BuildableName = "Pods_SoleekLabTask.framework"
-            BlueprintName = "Pods-SoleekLabTask"
+            BlueprintIdentifier = "E8E2C60C1664F39F91DC5AF711B5706D"
+            BuildableName = "SwiftyJSON.framework"
+            BlueprintName = "SwiftyJSON"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

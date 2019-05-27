@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.2)
   - FBSDKCoreKit (5.0.1):
     - FBSDKCoreKit/Basics (= 5.0.1)
     - FBSDKCoreKit/Core (= 5.0.1)
@@ -84,8 +85,10 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -93,9 +96,11 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - GoogleSignIn
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
@@ -111,8 +116,10 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   FBSDKCoreKit: 4a19534474ade7c71bd016d800aa5e7722bcdda1
   FBSDKLoginKit: 41efa754b909b0ea813fa9a8596dacc8ed196d50
   FBSDKShareKit: 11faa09311bc009740b9a939ee2673146df2c9df
@@ -128,7 +135,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 84df567c76ca84f67b7bb40e769fdd4acc746a10
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: c37c80862b8e10c3a4b36ac8d2242534e4341140
+PODFILE CHECKSUM: 370d688e9547fb96481bedb726de026b4c272f45
 
 COCOAPODS: 1.6.0.rc.1
