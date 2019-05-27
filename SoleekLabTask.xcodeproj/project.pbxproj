@@ -44,6 +44,7 @@
 		8FFFE411229BF3050052CC42 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
 		8FFFE413229BF3A30052CC42 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		8FFFE415229C08540052CC42 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		8FFFE417229C6F410052CC42 /* SoleekLabTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoleekLabTask.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		8F10E51C22981602008EF4F5 /* SoleekLabTask */ = {
 			isa = PBXGroup;
 			children = (
+				8FFFE417229C6F410052CC42 /* SoleekLabTask.entitlements */,
 				8F10E53122983FB1008EF4F5 /* controller */,
 				8F10E53022983FAC008EF4F5 /* view */,
 				8F10E52F22983FA5008EF4F5 /* model */,
@@ -174,6 +176,11 @@
 				TargetAttributes = {
 					8F10E51922981602008EF4F5 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -455,6 +462,7 @@
 			baseConfigurationReference = 6757C1BE5D503AF82E00A3AC /* Pods-SoleekLabTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SoleekLabTask/SoleekLabTask.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TPMJ9P566X;
 				INFOPLIST_FILE = SoleekLabTask/Info.plist;
@@ -474,6 +482,7 @@
 			baseConfigurationReference = 72FD74954247F74E608E5312 /* Pods-SoleekLabTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SoleekLabTask/SoleekLabTask.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TPMJ9P566X;
 				INFOPLIST_FILE = SoleekLabTask/Info.plist;

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import FBSDKLoginKit
 
 class RegisterViewController: UIViewController,GIDSignInUIDelegate {
    
@@ -35,7 +36,7 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         guard let password = passwordTextField.text else { return }
         guard let confirmPassword = confirmPasswordTextField.text else { return }
         
-        if email.contains("@") == false {
+        if email.contains("@") == false && email.contains("."){
             makeAlert(title: "invalid Email", message: "please enter a valid email Address")
         }
         else if password.count < 8 {
@@ -61,21 +62,40 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
+    // MARK: - Facebook login methods
     @IBAction func registerWithFacebook(_ sender: UIButton) {
-    
+        let fbLoginManager = LoginManager()
+        fbLoginManager.logIn(permissions: ["email","public_profile"], from: self) { (results, error) in
+            if error != nil {
+                print("facebook login failed")
+                return
+            }
+            self.loginTofirebaseWithFB()
+        }
     }
     
-    private func makeAlert(title: String,message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let acttion = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(acttion)
-        present(alert, animated: true, completion: nil)
+    func loginTofirebaseWithFB(){
+        guard let token = AccessToken.current else { return }
+        let credentials = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+        Auth.auth().signIn(with: credentials) { (results, error) in
+            if let error = error {
+                self.makeAlert(title: "Facebook", message: "failed to register with facebook \(error.localizedDescription)")
+                print(error)
+                return
+            }
+            
+            // User is signed in
+            self.performSegue(withIdentifier: "registerToHome", sender: self)
+        }
+        
     }
     
+    
+    //MARK: - Gmail login Delegate methods
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
 
         if let error = error {
-            makeAlert(title: "Google", message: "Failed to signin with your gmail account")
+            makeAlert(title: "Google", message: "Failed to signin with your gmail account \(error.localizedDescription)")
             print(error)
             return
         }
@@ -88,7 +108,7 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         
         Auth.auth().signIn(with: credential) { (results, error) in
             if let error = error {
-                self.makeAlert(title: "Google", message: "failed to register with gmail")
+                self.makeAlert(title: "Google", message: "failed to register with gmail \(error.localizedDescription)")
                 print(error)
                 return
             }
@@ -98,6 +118,14 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         }
         
     }
+    
+    private func makeAlert(title: String,message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let acttion = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(acttion)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 // MARK: - Textfield delegate methods
 extension RegisterViewController: UITextFieldDelegate {
