@@ -21,6 +21,9 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         super.viewDidLoad()
         (UIApplication.shared.delegate as! AppDelegate).goToHomeDelegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        emailTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        passwordTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -95,7 +98,21 @@ class RegisterViewController: UIViewController,GIDSignInUIDelegate {
         
     }
 }
+// MARK: - Textfield delegate methods
+extension RegisterViewController: UITextFieldDelegate {
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+}
+
+
+//MARK: go to home Delegate Methods
 extension RegisterViewController: homeDelegate{
     func goToHomeScreen(state: Connection) {
         if state == .AuthenticationFailed {
