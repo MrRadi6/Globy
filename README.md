@@ -28,3 +28,8 @@ Globy is a Native ios mobile application which contain three views login, regist
   - process HUD added to show user that the application is processing
 
 # Screenshots
+(https://github.com/MrRadi6/Globy/blob/master/Screenshot/Screen%20Shot%202019-05-27%20at%2011.38.25%20PM.png)
+(https://github.com/MrRadi6/Globy/blob/master/Screenshot/Screen%20Shot%202019-05-27%20at%2011.38.38%20PM.png)
+(https://github.com/MrRadi6/Globy/blob/master/Screenshot/Screen%20Shot%202019-05-27%20at%2011.38.49%20PM.png)
+(https://github.com/MrRadi6/Globy/blob/master/Screenshot/Screen%20Shot%202019-05-27%20at%2011.39.17%20PM.png)
+(https://github.com/MrRadi6/Globy/blob/master/Screenshot/Screen%20Shot%202019-05-27%20at%2011.39.35%20PM.png)
