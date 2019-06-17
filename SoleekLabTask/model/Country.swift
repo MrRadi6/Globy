@@ -34,7 +34,7 @@ struct Country {
     }
     
     func getNativeName() -> String {
-        return nativeName ?? "timezone unvailable"
+        return nativeName ?? "Native Name unvailable"
     }
     
     func getDetails() -> String {

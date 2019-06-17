@@ -15,6 +15,8 @@
 		8F10E53922986D1B008EF4F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F10E53822986D1B008EF4F5 /* Assets.xcassets */; };
 		8F10E53B22986F10008EF4F5 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F10E53A22986F10008EF4F5 /* DesignableButton.swift */; };
 		8F397B3D2298849E00BCE1F4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F397B3C2298849E00BCE1F4 /* RegisterViewController.swift */; };
+		8FB884C322B7A05A00A4957D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB884C222B7A05A00A4957D /* MenuViewController.swift */; };
+		8FB884C522B7A20A00A4957D /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB884C422B7A20A00A4957D /* Characters.swift */; };
 		8FC67F0C2299D4770030AC32 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC67F0B2299D4770030AC32 /* Connection.swift */; };
 		8FC923482298DFEE0028E1AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC923472298DFEE0028E1AA /* HomeViewController.swift */; };
 		8FC9234A2298E0E00028E1AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FC923492298E0E00028E1AA /* GoogleService-Info.plist */; };
@@ -38,6 +40,8 @@
 		8F10E53822986D1B008EF4F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F10E53A22986F10008EF4F5 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		8F397B3C2298849E00BCE1F4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8FB884C222B7A05A00A4957D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8FB884C422B7A20A00A4957D /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		8FC67F0B2299D4770030AC32 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		8FC923472298DFEE0028E1AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FC923492298E0E00028E1AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				8FC67F0B2299D4770030AC32 /* Connection.swift */,
 				8FFFE413229BF3A30052CC42 /* Country.swift */,
 				8FFFE415229C08540052CC42 /* Networking.swift */,
+				8FB884C422B7A20A00A4957D /* Characters.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				8F10E51F22981602008EF4F5 /* LoginViewController.swift */,
 				8F397B3C2298849E00BCE1F4 /* RegisterViewController.swift */,
 				8FC923472298DFEE0028E1AA /* HomeViewController.swift */,
+				8FB884C222B7A05A00A4957D /* MenuViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -312,8 +318,10 @@
 				8FFFE416229C08540052CC42 /* Networking.swift in Sources */,
 				8FFFE414229BF3A30052CC42 /* Country.swift in Sources */,
 				8F397B3D2298849E00BCE1F4 /* RegisterViewController.swift in Sources */,
+				8FB884C322B7A05A00A4957D /* MenuViewController.swift in Sources */,
 				8F10E53322984005008EF4F5 /* DesignableTextField.swift in Sources */,
 				8F10E51E22981602008EF4F5 /* AppDelegate.swift in Sources */,
+				8FB884C522B7A20A00A4957D /* Characters.swift in Sources */,
 				8F10E53B22986F10008EF4F5 /* DesignableButton.swift in Sources */,
 				8FC923482298DFEE0028E1AA /* HomeViewController.swift in Sources */,
 				8FC67F0C2299D4770030AC32 /* Connection.swift in Sources */,

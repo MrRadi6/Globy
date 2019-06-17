@@ -15,16 +15,20 @@ class Networking {
     
     private let url = "https://restcountries.eu/rest/v2/all"
     private var countries: [Country] = []
+    private var filteredCountries: [Country] = []
     private let collectionView: UICollectionView
+    var startWith:String
     
-    init(view: UICollectionView){
+    init(view: UICollectionView, startWith:String){
         collectionView = view
+        self.startWith = startWith
         makeRESTCall()
         print("Countries is equal: \(countries.count)")
     }
     deinit {
         print("network released")
     }
+    
     //MARK: - Make REST request
     private func makeRESTCall(){
         Alamofire.request(url,method: .get).validate().responseJSON { (response) in
@@ -50,7 +54,26 @@ class Networking {
             
         }
         // nodify the Controller that model finished downloading the data
+        buildFilteredCountries()
         collectionView.reloadData()
+    }
+    
+    //MARK: - build filtered Country
+    private func buildFilteredCountries(){
+        for country in countries {
+            if country.getName().starts(with: startWith) {
+                filteredCountries.append(country)
+            }
+        }
+    }
+    
+    //MARK: - Send  the Filterd Data to Controller
+    
+    func getNumberOffilteredCountries() -> Int{
+        return filteredCountries.count
+    }
+    func getFilteredCountriesAtIndex(index: Int) -> Country{
+        return filteredCountries[index]
     }
     
     //MARK: - Send  the Retrieved Data to Controller
